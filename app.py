@@ -26,7 +26,7 @@ def main():
 
         if not data.empty:
             st.subheader(f"Data for {whichstock} from {START_DATE} to {END_DATE}")
-            st.write(data.head(15))
+            st.write(data)
 
             data['EMA-50'] = data['Close'].ewm(span=50, adjust=False).mean()
             data['EMA-200'] = data['Close'].ewm(span=200, adjust=False).mean()
